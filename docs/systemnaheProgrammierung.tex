@@ -152,14 +152,25 @@
 	\listoftables{}\addtocontents{lot}{\par}
 	\addcontentsline{toc}{section}{Tabellenverzeichnis} 
 	
+	\pagebreak{}
+	\clearscrheadings
+	\pagenumbering{arabic}
+	\cfoot{\pagemark}
+	\setcounter{page}{1} 
+	
 	\section{Einleitung}
+		\input{Einleitung}
 		
 	\section{Grundlagen}
+		\input{Grundlagen}
 	
 	\section{Konzept}
+		\input{Konzept}
 	
 	\section{Umsetzung}
-	
+		\input{Umsetzung}
+		
 	\section{Zusammenfassung}
+		\input{Zusammenfassung}
 		
 \end{document}
