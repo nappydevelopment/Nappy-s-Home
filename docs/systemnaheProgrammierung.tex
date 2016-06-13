@@ -1,0 +1,176 @@
+\documentclass[fontsize=12pt,DIV=11,BCOR=4mm,fleqn]{scrartcl}
+\KOMAoptions{footnotes=multiple}
+
+\usepackage[hyphens]{url}
+\usepackage[
+	bookmarksopen,
+	colorlinks=false,
+	linktoc=all,
+	linkcolor=red,
+	citecolor=green,
+	urlcolor=blue,
+	pdftitle={Systemnahe Programmierung}, 
+	pdfauthor={Mehmet Ali Incekara, Tom Wolske, Heiko Faller}
+]{hyperref}
+
+\usepackage[margin=3cm]{geometry}
+
+\usepackage{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\usepackage[yyyymmdd]{datetime}
+\renewcommand{\dateseparator}{.}
+
+\usepackage{enumitem}
+\setlist[description]{style=nextline}
+
+\setkomafont{section}{\Huge} 
+\setkomafont{subsection}{\Large}
+
+\usepackage[nonumberlist,acronym,toc,section]{glossaries}
+\renewcommand*{\glspostdescription}{}
+\makeglossaries
+\include{acronym}
+\include{glossar}
+\glsaddall
+\bibliographystyle{plaindin}
+
+\usepackage[onehalfspacing]{setspace} 
+
+\usepackage{fontspec}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage[svgnames,table]{xcolor}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage[ngerman]{babel}
+\usepackage[babel,german=quotes]{csquotes}
+\usepackage{eurosym}
+
+\usepackage{listings}
+\setlist[description]{style=nextline}
+\definecolor{light-gray}{gray}{0.95}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+
+\newcommand{\minitab}[2][c]{\begin{tabular}{#1}#2\end{tabular}}
+\newcolumntype{/}{>{\global\let\currentrowstyle\relax}}
+\newcolumntype{^}{>{\currentrowstyle}}
+\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
+  #1\ignorespaces
+}
+
+\usepackage{scrlayer-scrpage}
+\automark{subsection}
+
+\clearscrheadings
+\setlength{\footheight}{36pt}
+\setlength{\headheight}{28pt}
+\ohead{\rightmark}
+\cfoot{\\Seite \pagemark}
+\pagestyle{scrheadings}
+
+\renewcommand{\contentsname}{Inhaltsverzeichnis}
+\renewcommand{\listfigurename}{Abbildungsverzeichnis}
+\renewcommand{\figurename}{Abbildung}
+\renewcommand{\listtablename}{Tabellenverzeichnis}
+\renewcommand{\tablename}{Tabelle}
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+	\begin{titlepage}
+		\fontspec{Times New Roman}
+		\begin{center}
+			\includegraphics[width=8cm]{dhbw.pdf}
+			
+			\vfill
+			\begin{singlespacing}
+				{\Huge TITEL UND SO} \vspace{1.7cm}
+				{\Large JSADOKAS}	\\ [0.25cm]
+				{\large des Studiengangs Angewandte Informatik}	\\ [0.25cm]
+				{\large an der Dualen Hochschule Baden-Württemberg Karlsruhe}	\\[0.25cm]
+				{\large von} 	\\ [0.25cm]
+				{\large \bfseries Heiko Faller, Mehmet Ali Incekara und Tom Wolske}	\\ [1cm]
+			\end{singlespacing} 
+			\vfill
+		\end{center}
+	\end{titlepage}
+	\clearscrheadings
+	
+	\vspace*{2.5cm}
+	\section*{Ehrenwörtliche Erklärung}
+	gemäß § 5 (3) der "`Studien- und Prüfungsordnung DHBW Technik"' vom 22. September 2011. \vspace{5pt}
+
+	Ich habe die vorliegende Arbeit mit dem Titel
+	
+	\begin{center}
+		"` TITEL "'
+	\end{center}
+	
+	selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel verwendet.
+
+	\vspace{2cm}
+	\makebox[7cm][l]{Montabaur, den \the\day.\the\month.\the\year}	\hfill	\\ %\makebox[5cm][c]{\includegraphics{Unterschrift_ali.png}} \\
+	\rule{5cm}{0.4pt} \hfill	\rule{5cm}{0.4pt} \\
+	\makebox[7cm][l]{Ort, Datum} \hfill	\makebox[5cm][c]{Mehmet Ali Incekara} 
+	
+	\pagebreak{}
+	\clearpage
+	\vspace*{2.1cm}
+	\section*{Sperrvermerk}
+		Die vorliegende Praxisarbeit mit dem Titel 
+		
+		\begin{center}
+			"` TITEL "'
+		\end{center}
+		
+		enthält vertrauliche Daten des Unternehmens 1\&1 Internet SE. \vspace{5pt}
+	
+		Diese Praxisarbeit darf nur vom Gutachter sowie berechtigten des Prüfungsausschusses eingesehen werden. Eine Vervielfältigung und Veröffentlichung der Praxisarbeit ist auch auszugsweise nicht erlaubt. \vspace{5pt}
+	
+		Dritten darf diese Arbeit nur mit der ausdrücklichen Genehmigung des Verfassers und Unternehmens zugänglich gemacht werden.
+	
+	\pagebreak{}
+	\clearpage
+	\vspace*{0.1cm}
+	\tableofcontents{} \thispagestyle{empty} \addtocontents{toc}{\par}
+	\addtocontents{toc}{\protect\thispagestyle{empty}}
+	
+	\pagebreak{}
+	\clearpage
+	\clearscrheadings
+	\pagenumbering{Roman}
+	\cfoot{\pagemark}
+	\setcounter{page}{5} 
+	\vspace*{2.5cm}
+	\listoffigures{}\addtocontents{lof}{\par}
+	\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+	
+	\pagebreak{}
+	\vspace*{2.5cm}
+	\listoftables{}\addtocontents{lot}{\par}
+	\addcontentsline{toc}{section}{Tabellenverzeichnis} 
+	
+	\pagebreak{}
+	\clearscrheadings
+	\pagenumbering{arabic}
+	\cfoot{\pagemark}
+	\setcounter{page}{1} 
+	
+	\section{Einleitung}
+		\input{Einleitung}
+		\pagebreak{}
+	\section{Grundlagen}
+		\input{Grundlagen}
+		\pagebreak{}
+	\section{Konzept}
+		\input{Konzept}
+		\pagebreak{}
+	\section{Umsetzung}
+		\input{Umsetzung}
+		\pagebreak{}
+	\section{Zusammenfassung}
+		\input{Zusammenfassung}
+		
+\end{document}
