@@ -1,9 +1,9 @@
 \subsection{Der Mikrocontroller}
 	Ein Mikrocontroller ist ein Ein-Chip-Computersystem, der einen Prozessor und Peripheriefunktionen beinhaltet. In den meisten Fällen befindet sich der Arbeits- und Programmspeicher teilweise oder auch komplett auf demselben Chip. 
 	
-	In der Industrie ist der Mikrocontroller bereits seit vielen Jahren ein nicht mehr wegzudenkendes Bauteil. Sie werden im Alltag in eingebetteten Systemen verwendet, zum Beispiel in Waschmaschinen, Fernsehgeräte und sogar im Fahrzeug als Steuergeräte für das Antiblockiersystem (ABS), Airbag usw.
+	In der Industrie ist der Mikrocontroller bereits seit vielen Jahren ein nicht mehr wegzudenkendes Bauteil. Sie werden im Alltag in eingebetteten Systemen verwendet, zum Beispiel in Waschmaschinen, Fernsehgeräte und sogar im Fahrzeug als Steuergeräte für das Antiblockiersystem (ABS), Airbag und weitere\footnote{Vgl. http://www.mikrocontroller.net/articles/AVR-Tutorial}.
 	
-	Mikrocontroller können in verschienden Sprachen programmiert werden. Welche sich jedoch am besten eignet, ist vom Anwendungsfall abhängig. Assembler eignet sich besonders, da es einen direkten Einstieg in die Hardware bietet und keine Abhängigkeiten zu anderen Compilern hat.\footnote{http://www.mikrocontroller.net/articles/AVR-Tutorial}. 
+	Mikrocontroller können in verschienden Sprachen programmiert werden. Welche sich jedoch am besten eignet, ist vom Anwendungsfall abhängig. Assembler eignet sich besonders, da es einen direkten Einstieg in die Hardware bietet und keine Abhängigkeiten zu anderen Compilern hat\footnote{Vgl. Kenneth J. Ayala, The 8051 Microcontroller, West Publishing Company, 1991, Seite 3}. 
 	
 \subsection{Assembler}
 	Ein Assembler ist ein Übersetzer für Programmcode, der sich aus Maschinenbefehlen zusammensetzt. In der Art der verwendeten Befehle besteht der wesentliche Unterschied zu allen anderen Programmiersprachen. 
@@ -13,10 +13,19 @@
 \subsection{MSC-8051}
 	Der MSC-8051 ist die Bezeichnung einer von Intel vorgestellten Familie von 8-Bit-Mikrocontrollern.
 	
+	Die Architektur enthält folgende Features\footnote{Vgl. Kenneth J. Ayala, The 8051 Microcontroller, West Publishing Company, 1991, Seite 8}.:
+	\begin{itemize}
+		\item{ 8 Bit CPU }
+		\item{ 2x 16 Bit Timer }
+		\item{ ROM mit 4 KByte ROM }
+		\item{ RAM mit 128 Byte 
+			\begin{itemize}
+				\item { 4 Register mit 8 Bit } 
+			\end{itemize}
+		}
+	\end{itemize}
 	
-	% \footnote{http://www.mikrocontroller.net/articles/8051}
 	
-	% \footnote{https://de.wikipedia.org/wiki/Intel_MCS-51}
 
 \subsection{MCU 8051 IDE}
 	Die MCU 8051 IDE ist eine grafische Entwicklungsumgebung für Mikrocontroller, die auf dem MSC-8051 basieren. Das folgende Bild stammt von der Homepage\footnote{http://www.moravia-microsystems.com/mcu-8051-ide/} der Entwicklungsumgebung. Es zeigt im Hintergrund den Aufbau der IDE und im Vordergrund einige Simulationsfeatures. 
