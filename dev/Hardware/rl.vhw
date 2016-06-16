@@ -1,6 +1,3 @@
 # MCU 8051 IDE: Virtual HW configuration file
-# Project: NappysHome
+# Project: Nappy's Home
 
-LedPanel {{4 - 0 3 5 - 1 3 6 - 2 3 7 - 3 3} {4 - 0 7 5 - 1 6 6 - 2 5 7 - 3 4} 380x130+950+353 {} red 1}
-SimpleKeyPad {{4 - 0 2 5 - 1 2 6 - 2 - 7 - 3 -} {4 - 0 1 5 - 1 0 6 - 2 - 7 - 3 -} 265x125+960+182 {} {4 0 0 0 5 0 1 0 6 0 2 0 7 0 3 0} 0 1}
-SimpleKeyPad {{4 0 0 0 5 0 1 0 6 0 2 0 7 0 3 0} {4 3 0 7 5 2 1 6 6 1 2 5 7 0 3 4} 265x125+959+27 {} {4 0 0 0 5 1 1 0 6 0 2 1 7 0 3 0} 0 1}
