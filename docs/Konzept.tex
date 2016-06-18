@@ -2,6 +2,7 @@
 
 Die Idee ist es, ein SmartHome zu entwickeln, welches auf einem 8051 Microcontroller als Grundlage aufbaut. Dabei sollen drei Hauptfunktionen eines modernen SmartHomes über diesen gesteuert werden.
 
+\subsubsection{Heizung}
 Die erste Funktion ist eine Temperatursteuerung für die Fußbodenheizung. Dabei soll die Fußbodenheizung in einem Haus so gesteuert werden, dass diese automatisch eingeschaltet wird, sobald die Temperatur unter einen festen Wert fällt. Außerdem soll der Nutzer mit Hilfe eines Schalters festlegen können, ob die Heizung dauerhaft an oder in einen automatischen Modus eingestellt ist. Der Temperatursensor ist zusätzlich abschaltbar, damit die Heizung ausgeschaltet werden kann.
 
 Wird der Heizungsschalter auf An gestellt, läuft die Heizung unabhängig von der Temperatur die ganze Zeit. Wird dieser auf den Automodus gestellt, kommt es auf den Temperatursensor an, da dieser unabhängig von der Heizung ein bzw. ausgeschaltet werden kann. Ist dieser eingeschaltet, schaltet sich die Heizung an, sobald die Temperatur unter einen bestimmten Wert fällt.
@@ -36,6 +37,8 @@ Für diese Steuerung wird die Schaltung nach diesem Schaltplan programmiert:
 \end{figure}
 
 Dabei kommen die Eingaben aus dem Port 2.0 bis 2.2 und die Ausgabe ist auf dem Port 3.4.
+
+\subsubsection{Licht}
 Die zweite Funktion ist eine Lichtsteuerung für das Licht. Der Nutzer soll die Möglichkeit haben das Licht mit Hilfe eines Bewegungssensors ein beziehungsweise aus zu schalten. Dieser Sensor ist zusätzlich an einen Schalter angeschlossen, um diesen An bzw. Aus zu schalten.
  
 Aus diesen Anforderungen ergibt sich eine Tabelle aus der alle möglichen Eingaben und Ausgabemöglichkeiten ausgelesen werden können. Aus diesen geht ein Schaltplan hervor, welcher für die Programmierung des 8051 genutzt wird.
@@ -64,8 +67,10 @@ Für diese Steuerung wird die Schaltung nach diesem Schaltplan programmiert:
 \end{figure}
 
 Dabei kommen die Eingaben aus den Ports P1.0 und 1.1 und die Ausgabe ist auf dem Port 3.5.
-Der dritte Teil der SmartHome Steuerung ist eine Steuerung für Rollläden. Diese sollen automatisch aufgehen, sobald es draußen hell, beziehungsweise zu gehen, sobald es draußen dunkel wird. Dabei gehen diese komplett auf und zu. Dafür werden kontakte an der Ober- und Unterseite der Rollläden genutzt. Für die automatische Steuerung wird ein Helligkeitssensor genutzt.
-Aus diesen Anforderungen geht wie zuvor auch eine Tabelle hervor:
+
+\subsubsection{Rollläden}
+Der dritte Teil der SmartHome Steuerung ist eine Steuerung für Rollläden. Diese werden in zwei Modi betrieben. Im automatischen Modus sollen sie sich automatisch öffnen, sobald es draußen hell, beziehungsweise schließen, sobald es draußen dunkel wird. Es wird ein Helligkeitssensor benötigt, der ein bit setzt, sobald es hell ist und umgekehrt. Der zweite Modus ist eine manuelle Steuerung. Für jeden Rollladen gibt es je zwei Schalter, die für Rollladen Hoch, beziehungsweise für Rollladen runter, stehen. Beide Modi werden durch Sensoren unterstützt, die jeweils anzeigen, ob ein Rollladen geschlossen oder ganz geöffnet ist. 
+Aus diesen Anforderungen gehen wie zuvor auch diese Tabellen für die beiden Modi hervor:
 
 \begin{table}[]
 \centering
@@ -111,3 +116,4 @@ Aus diesen Anforderungen geht wie zuvor auch eine Tabelle hervor:
 1 & 1 & 1 & 0 & 0 \\ \hline
 \end{tabular}
 \end{table}
+Die Signale aus Sensoren und Schalter sollen über P0, sowie über P2.6 und P2.7 eingegeben werden. Die Ausgabe an die Motoren erfolgt über P3.0 - P3.3
