@@ -3,32 +3,32 @@ Die Schwierigkeit bei der Entwicklung der Rollladenschaltung war, dass eine Meng
 Im manuellen Modus wird bei den Röllläden abwechselnd überprüft, ob sie hoch oder runter fahren sollen. Dazu wird mittels Polling jeweils abgefragt, wie die Schalterpositionen sind und ob der zu überprüfende Rollladen oben oder unten ist. Dementsprechend werden dann die Motoren angesteuert. Es werden dabei immer die Zustände beider Schalter, also sowohl für hoch als auch für runter, abgefragt. Das dient dazu, den fehlerhaften Zustand, dass beide aktiviert sind zu umgehen. In diesem Fall würde der Rollladen dann einfach nicht starten, als wären beide Schalter inaktiv. \\
 Die Abfragen laufen folgendermaßen ab:
 Zuerst wird bei beiden Rollläden nach folgendem Schema geprüft, ob sie nach oben fahren sollen.
-\enuerate{begin}
+\begin{enumerate}
 \item{Rolladen nicht oben?}
 \item{Schalter hoch aktiviert?}
 \item{Schalter runter deaktiviert?}
 \item{Rolladen abhängig davon hochfahren}
-\enumerate{end}
+\end{enumerate}
 Daraufhin folgen, wieder für beide Rollläden, die Abfragen, um zu prüfen ob sie nach unten fahren müssen.
-\enuerate{begin}
+\begin{enumerate}
 \item{Rolladen nicht unten?}
 \item{Schalter runter aktiviert?}
 \item{Schalter hoch deaktiviert?}
 \item{Rolladen abhängig davon heruntergefahren}
-\enumerate{end}
+\end{enumerate}
 
-\subsubsection{Audomodus}
+\subsubsection{Automodus}
 Ist der automatische Modus aktiviert, ist die Position der Schalter egal, da diese nicht mehr abgerufen werden. Stattdessen kommt ein Helligkeitssensor zum Einsatz, der bei anschlägt, wenn es draußen hell ist. In diesem Fall werden also das Sensor-Bit, sowie wieder die Positionssensoren, abgefragt.
 Zuerst kommt wieder für beide Rollläden die Prüfung, ob er nach oben fahren soll.
 
-\enuerate{begin}
+\begin{enumerate}
 \item{Rolladen nicht oben?}
 \item{Helligkeitssensor schlägt an?}
 \item{Rolladen abhängig davon hochfahren}
-\enumerate{end}
+\end{enumerate}
 Abschließend kommen nun noch die Abfragen, ob die Rollläden nach  unten fahren sollen.
-\enuerate{begin}
+\begin{enumerate}
 \item{Rolladen nicht unten?}
 \item{Helligkeitssensor schlägt nicht an?}
 \item{Rolladen abhängig davon heruntergefahren}
-\enumerate{end}
+\end{enumerate}
